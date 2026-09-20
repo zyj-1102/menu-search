@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级菜单搜索器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ 餐厅菜单检索系统</h1>
+
+        <!-- 搜索区域 -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="输入菜名/拼音搜索，例如：红烧肉 hongshao">
+            <button id="clearBtn">清空</button>
+        </div>
+
+        <!-- 分类筛选按钮 -->
+        <div class="category-box">
+            <button class="category-btn active" data-category="all">全部</button>
+            <button class="category-btn" data-category="meat">荤菜</button>
+            <button class="category-btn" data-category="veg">素菜</button>
+            <button class="category-btn" data-category="soup">汤品</button>
+        </div>
+
+        <!-- 菜品列表 -->
+        <div id="menuList" class="menu-list"></div>
+
+        <!-- 无结果提示 -->
+        <div id="emptyTip" class="empty-tip" style="display:none;">
+            😥 没有找到匹配菜品，请换关键词试试
+        </div>
+    </div>
+
+    <!-- 菜品弹窗 -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalName"></h2>
+            <p id="modalPrice"></p>
+            <p id="modalCategory"></p>
+            <p id="modalDesc"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
